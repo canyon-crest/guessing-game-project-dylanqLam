@@ -8,7 +8,20 @@ const scoreArr = [];
 
 // event listeners
 playBtn.addEventListener("click", play);
-guessBtn.addEventListener("click", makeGuess)
+guessBtn.addEventListener("click", makeGuess);
+nameBtn.addEventListener("click", obtainName);
+
+function obtainName(){
+    let nameValue = document.getElementById("name").value;
+    if(nameValue == ""){
+        nameParagraph.textContent = "Invalid Name. Try again.";
+    } else {
+        nameParagraph.textContent = "Welcome, " + nameValue;
+        nameBtn.disabled = true;
+        name.disabled = true;
+    }
+}
+
 
 function time(){
     let d = new Date();
@@ -39,6 +52,7 @@ function play(){
 
 function makeGuess(){
     let userGuess = parseInt(guess.value);
+    
     if(isNaN(userGuess) || userGuess < 1 || userGuess > level){
         msg.textContent = "INVALID, guess a number!"
         return;
