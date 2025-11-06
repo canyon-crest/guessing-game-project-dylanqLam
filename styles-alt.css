@@ -1,0 +1,73 @@
+:root{
+  --bg:#0b1020;
+  --card:#0f1724;
+  --accent:#00d4ff;
+  --accent-2:#7c3aed;
+  --muted:#9aa3b2;
+  --glass: rgba(255,255,255,0.03);
+  --radius:14px;
+  --glow: 0 8px 30px rgba(124,58,237,0.14);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent), linear-gradient(180deg,#071023,#081224 60%); color:#e6eef6}
+.wrap{ max-width:1100px; margin:36px auto; padding:20px; }
+
+.hero{
+  display:flex; align-items:center; gap:18px; padding:18px; border-radius:12px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+  margin-bottom:18px;
+}
+.hero h1{ margin:0; font-size:1.6rem; letter-spacing:0.6px; color:var(--accent); text-shadow: 0 2px 14px rgba(0,212,255,0.06) }
+.hero .tag{ margin:0; color:var(--muted) }
+
+.board{ display:grid; grid-template-columns: 380px 1fr; gap:20px; align-items:start; }
+
+/* Panels */
+.panel{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding:18px;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: var(--glow);
+}
+
+/* Left/controls */
+.left .control{ margin-bottom:14px }
+.label{ display:block; color:var(--muted); font-size:0.85rem; margin-bottom:8px }
+.row{ display:flex; gap:8px; align-items:center }
+.row input[type="text"]{
+  background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.03);
+  color: #eaf6ff; padding:10px 12px; border-radius:10px; outline:none; min-width:0;
+}
+.row input::placeholder{ color: rgba(234,246,255,0.28) }
+button{ padding:9px 12px; border-radius:10px; border:none; cursor:pointer; font-weight:600 }
+button:disabled{ opacity:0.5; cursor:default }
+
+#nameBtn{ background:linear-gradient(90deg,var(--accent), var(--accent-2)); color:#031023 }
+.wide{ width:100%; margin-top:8px; background:linear-gradient(90deg,var(--accent-2), var(--accent)); color:#031023 }
+
+.chip{ background: rgba(255,255,255,0.02); padding:8px 10px; border-radius:999px; font-size:0.95rem; color:var(--muted); display:inline-flex; gap:8px; align-items:center }
+.chip input{ accent-color:var(--accent); transform:translateY(1px) }
+
+/* Guess row */
+.guess-row input{ flex:1 }
+#guessBtn{ background:linear-gradient(90deg,#00d4ff,#7c3aed); color:#06202a }
+.muted-btn{ background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--muted) }
+
+/* Right panel */
+.right h3{ color:var(--accent); margin-top:0 }
+.stats p, .leaderboard p{ color:var(--muted); margin:6px 0 }
+ol{ padding-left:18px; margin:0 }
+ol li{ background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:10px; border-radius:8px; margin-bottom:8px; color:#dfeefc }
+
+/* Footer note */
+.foot{ margin-top:14px; color:var(--muted); font-size:0.9rem; text-align:center }
+
+/* Responsive */
+@media (max-width:880px){
+  .board{ grid-template-columns:1fr; }
+  .hero{ flex-direction:column; align-items:flex-start }
+}

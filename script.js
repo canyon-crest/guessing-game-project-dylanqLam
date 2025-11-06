@@ -119,7 +119,7 @@ function play(){
     
     answer = Math.floor(Math.random()*level)+1;
     msg.textContent = "Guess A Number Between 1-" + level + ", " + finalName;
-    guess.placeholder = answer;
+    guess.placeholder = answer + ", I kept this so you could test";;
     score = 0;
 
 

@@ -1,44 +1,75 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>JavaScript Number Guessing Game</title>
+    <meta charset="utf-8" />
+    <title>Guessing Game — Night Mode</title>
+    <link rel="stylesheet" href="styles-alt.css">
     <script src="script.js" defer></script>
   </head>
   <body>
-    <p id="date"></p>
-    <p id="timeParagraph"></p>
+    <main class="wrap">
+      <header class="hero">
+        <h1>Number Quest</h1>
+        <p class="tag">Find the hidden number — fast and clever</p>
+      </header>
 
-    <input type="text" id="nameInput">
-    <button id="nameBtn">Choose Name</button>
+      <section class="board">
+        <aside class="panel left">
+          <div class="clock">
+            <p id="date"></p>
+            <p id="timeParagraph"></p>
+          </div>
 
-    <p id="nameParagraph"></p>
+          <div class="control">
+            <label class="label">Player</label>
+            <div class="row">
+              <input id="nameInput" type="text" placeholder="Enter name">
+              <button id="nameBtn">Set</button>
+            </div>
+            <p id="nameParagraph" class="muted"></p>
+          </div>
 
-    <h3>Level</h3>
-    <input type="radio" name="level" id="e" value="3" checked disabled><label for="e">Easy</label>
-    <input type="radio" name="level" id="m" value="10" disabled><label for="m">Medium</label>
-    <input type="radio" name="level" id="h" value="100" disabled><label for="h">Hard</label>
+          <div class="control">
+            <label class="label">Difficulty</label>
+            <div class="levels">
+              <label class="chip"><input type="radio" name="level" id="e" value="3" checked disabled> Easy</label>
+              <label class="chip"><input type="radio" name="level" id="m" value="10" disabled> Medium</label>
+              <label class="chip"><input type="radio" name="level" id="h" value="100" disabled> Hard</label>
+            </div>
+            <button id="playBtn" disabled class="wide">Play</button>
+          </div>
 
-    <button id="playBtn" disabled>Play</button>
+          <div class="control">
+            <h3 id="msg">Select a Level</h3>
+            <p id="roundTime" class="muted"></p>
+            <div class="row guess-row">
+              <input id="guess" type="text" placeholder="Your guess" disabled>
+              <button id="guessBtn" disabled>Try</button>
+              <button id="giveUpBtn" disabled class="muted-btn">Give Up</button>
+            </div>
+          </div>
+        </aside>
 
-    <h3 id="msg">Select a Level</h3>
-    <p id="roundTime"></p>
-
-    <input type="text" id="guess" disabled>
-    <button id="guessBtn" disabled>Guess</button>
-    <button id="giveUpBtn" disabled>Give Up</button>
-
-    <h3>Stats</h3>
-    <p id="wins">Total wins: 0</p>
-    <p id="avgScore">Average Score: </p>
-    <p id="avgTime">Average Time: </p>
-    <p id="fastestTime"></p>
-
-    <h3>Leaderboard</h3>
-    <ol>
-      <li name="leaderboard">100</li>
-      <li name="leaderboard">100</li>
-      <li name="leaderboard">100</li>
-    </ol>
-
+        <section class="panel right">
+          <div class="stats">
+            <h3>Stats</h3>
+            <p id="wins">Total wins: 0</p>
+            <p id="avgScore">Average Score: </p>
+            <p id="avgTime">Average Time: </p>
+            <p id="fastestTime"></p>
+          </div>
+          <br>
+          <div class="leaderboard">
+            <h3>Leaderboard</h3>
+            <ol>
+              <li name="leaderboard">100</li>
+              <li name="leaderboard">100</li>
+              <li name="leaderboard">100</li>
+            </ol>
+          </div>
+        </section>
+      </section>
+      <footer class="foot muted">Good Luck!</footer>
+    </main>
   </body>
 </html>
