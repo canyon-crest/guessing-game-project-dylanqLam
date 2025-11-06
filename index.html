@@ -6,20 +6,23 @@
   </head>
   <body>
     <p id="date"></p>
+    <p id="timeParagraph"></p>
 
-    <input type="text" id="name">
+    <input type="text" id="nameInput">
     <button id="nameBtn">Choose Name</button>
 
     <p id="nameParagraph"></p>
 
     <h3>Level</h3>
-    <input type="radio" name="level" id="e" value="3" checked><label for="e">Easy</label>
-    <input type="radio" name="level" id="m" value="10"><label for="m">Medium</label>
-    <input type="radio" name="level" id="h" value="100"><label for="h">Hard</label>
+    <input type="radio" name="level" id="e" value="3" checked disabled><label for="e">Easy</label>
+    <input type="radio" name="level" id="m" value="10" disabled><label for="m">Medium</label>
+    <input type="radio" name="level" id="h" value="100" disabled><label for="h">Hard</label>
 
-    <button id="playBtn">Play</button>
+    <button id="playBtn" disabled>Play</button>
 
     <h3 id="msg">Select a Level</h3>
+    <p id="roundTime"></p>
+
     <input type="text" id="guess" disabled>
     <button id="guessBtn" disabled>Guess</button>
     <button id="giveUpBtn" disabled>Give Up</button>
@@ -27,6 +30,8 @@
     <h3>Stats</h3>
     <p id="wins">Total wins: 0</p>
     <p id="avgScore">Average Score: </p>
+    <p id="avgTime">Average Time: </p>
+    <p id="fastestTime"></p>
 
     <h3>Leaderboard</h3>
     <ol>
@@ -34,5 +39,6 @@
       <li name="leaderboard">100</li>
       <li name="leaderboard">100</li>
     </ol>
+
   </body>
 </html>
